@@ -38,7 +38,7 @@ module.exports = {
     }],
     "@typescript-eslint/typedef": [
       "error", {
-        "variableDeclaration": true
+        "variableDeclaration": false
       }
     ],
     "@typescript-eslint/no-unused-vars": ["error", {
