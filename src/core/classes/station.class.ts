@@ -3,13 +3,13 @@ import StationInterface from '../interfaces/station.interface';
 import MechanicInterface from '../interfaces/mechanic.interface';
 
 export default class Station {
-  id: string;
+  id: StationInterface['id'];
 
-  car: CarInterface | object;
+  car: StationInterface['car'];
 
-  supervisor: MechanicInterface | object;
+  supervisor: StationInterface['supervisor'];
 
-  mechanics: MechanicInterface[] | Array<any>;
+  mechanics: StationInterface['mechanics'];
 
   constructor({
     id,
@@ -31,12 +31,19 @@ export default class Station {
     this.supervisor = supervisor;
   }
 
-  addMechanicsToTeam(mechanics: MechanicInterface[]): void {
+  addMechanics(mechanics: MechanicInterface[]): void {
     mechanics.forEach((mechanic: MechanicInterface) => {
       const mechanicWithSameID = (mech: MechanicInterface): boolean => mechanic.id === mech.id;
       if (!this.mechanics.find(mechanicWithSameID)) {
         this.mechanics.push(mechanic);
       }
     });
+  }
+
+  getMechanics(): MechanicInterface[] {
+    return [
+      this.supervisor,
+      ...this.mechanics,
+    ];
   }
 }

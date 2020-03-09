@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react';
-import './core/main';
+import './main';
 
 const App: FunctionComponent = () => (
   <div className="App">
