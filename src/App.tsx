@@ -1,11 +1,9 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      OPEN TERMINAL FOR OUTPUT
-    </div>
-  );
-}
+const App: FunctionComponent = () => (
+  <div className="App">
+    OPEN TERMINAL FOR OUTPUT
+  </div>
+);
 
 export default App;
